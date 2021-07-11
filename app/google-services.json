@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416900542457",
+    "project_id": "suitmediatest-10891",
+    "storage_bucket": "suitmediatest-10891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416900542457:android:05af2b7cd2cab895cd9728",
+        "android_client_info": {
+          "package_name": "com.riquest.suitmediamobiletest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416900542457-ko3cl9eri897d3n4r2su3678lbvgtfi4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3fQV4yeR-fdkg5yY0lOojZl_lJQm_B6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416900542457-ko3cl9eri897d3n4r2su3678lbvgtfi4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

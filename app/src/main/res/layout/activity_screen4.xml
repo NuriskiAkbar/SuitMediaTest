@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_validation"
+    tools:context=".Screen4Activity">
+
+    <GridView
+        android:id="@+id/gv_guest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:verticalSpacing="15sp"
+        android:horizontalSpacing="15sp"
+        android:columnWidth="150sp"
+        android:numColumns="auto_fit"/>
+
+
+
+</RelativeLayout>
