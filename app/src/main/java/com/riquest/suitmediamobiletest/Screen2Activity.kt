@@ -1,10 +1,16 @@
 package com.riquest.suitmediamobiletest
 
+import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.core.Context
 import kotlinx.android.synthetic.main.screen2.*
+import java.lang.StringBuilder
 
 class Screen2Activity : AppCompatActivity() {
 
@@ -12,9 +18,15 @@ class Screen2Activity : AppCompatActivity() {
     //    const val NAME = "NAMA"
    //     const val BUTTON1 = "BUTTON1"
     //}
+    fun isPalindromeString(inputStr: String): Boolean {
+        val sb = StringBuilder(inputStr)
+        val reverseStr = sb.reverse().toString()
+        return inputStr.equals(reverseStr, ignoreCase = true)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide();
         setContentView(R.layout.screen2)
 
         val sharedPreferences = getSharedPreferences("sharedPrefs", android.content.Context.MODE_PRIVATE)
@@ -27,6 +39,16 @@ class Screen2Activity : AppCompatActivity() {
         tv_nama.text = savedname
         btn_event.text = savedevent
         btn_guest.text = savedguest
+
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("is this Palindrome???")
+        if(savedname?.let { isPalindromeString(it) } == true){
+            builder.setMessage("isPalindrome")
+        }else{
+            builder.setMessage("not Palindrome")
+        }
+        builder.setNegativeButton("nah",{ dialogInterface: DialogInterface, i: Int ->})
+        builder.show()
 
         btn_event.setOnClickListener {
             val intent = Intent(this@Screen2Activity, Screen3Activity::class.java)

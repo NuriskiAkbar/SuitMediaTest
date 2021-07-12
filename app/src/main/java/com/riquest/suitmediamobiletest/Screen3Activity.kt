@@ -4,11 +4,13 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_screen3.*
 import kotlinx.android.synthetic.main.row_event.*
 import kotlinx.android.synthetic.main.row_event.tv_nama
 import kotlinx.android.synthetic.main.screen2.*
@@ -22,6 +24,8 @@ class Screen3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen3)
+
+        refreshApp()
 
         var listview = findViewById<ListView>(R.id.lv_event)
         var list = mutableListOf<Model>()
@@ -46,6 +50,18 @@ class Screen3Activity : AppCompatActivity() {
            //intent.putExtra(Screen2Activity.NAME, name)
             startActivity(intent)
         }
+    }
 
+    private fun refreshApp() {
+        swipetorefresh.setOnRefreshListener {
+            Toast.makeText(this,"this page is refresh", Toast.LENGTH_LONG).show()
+
+            swipetorefresh.isRefreshing = false
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu, menu)
+        return true
     }
 }
